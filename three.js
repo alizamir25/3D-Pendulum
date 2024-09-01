@@ -58,32 +58,32 @@ const renderer=new THREE.WebGLRenderer({
         repeat: -1,
         ease: 'power1.inOut',
         yoyo: true,
-        delay: i * 0.1
+        delay: i*0.1
       }) 
       meshes.push(group)
     }
-    const geoPlane = new THREE.PlaneBufferGeometry(100, 100)
-    const mat3 = new THREE.MeshPhongMaterial( { 
+    const geoPlane=new THREE.PlaneBufferGeometry(100, 100)
+    const mat3=new THREE.MeshPhongMaterial( { 
       color: 0xffffff,
       shininess: 0.4,
       metalness: 0.2,
     })
-    const plane = new THREE.Mesh(geoPlane, mat3)
-    plane.rotation.x = -Math.PI / 2
-    plane.position.y = -2
-    plane.receiveShadow = true
+    const plane=new THREE.Mesh(geoPlane, mat3)
+    plane.rotation.x=-Math.PI / 2
+    plane.position.y=-2
+    plane.receiveShadow=true
     scene.add(plane)
   }
   init()
-  const render = () => {
+  const render=()=>{
       requestAnimationFrame( render )
       renderer.render( scene, camera )
     controls.update()
-    scene.rotation.y += .005
+    scene.rotation.y+=.005
   }
   render()
-  const resize = () => {
-    camera.aspect = window.innerWidth / window.innerHeight
+  const resize=()=>{
+    camera.aspect=window.innerWidth/window.innerHeight
     camera.updateProjectionMatrix()
     renderer.setSize( window.innerWidth, window.innerHeight )
   }
