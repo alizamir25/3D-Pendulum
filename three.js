@@ -1,25 +1,25 @@
-const renderer = new THREE.WebGLRenderer({ 
+const renderer=new THREE.WebGLRenderer({ 
     canvas: document.getElementById('canvas'), 
     antialias: true
   })
   renderer.setSize( window.innerWidth, window.innerHeight )
-  const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 )
-  camera.position.z = 5
-  const scene = new THREE.Scene()
-  scene.background = new THREE.Color( 0xe0e0e0 )
-  scene.fog = new THREE.Fog( 0xe0e0e0, 1, 15 )
-  const controls = new THREE.OrbitControls(camera, renderer.domElement)
-  controls.enableDamping = true
-  controls.dampingFactor = 0.1
-  const ambientLight = new THREE.AmbientLight(0xffffff, .5)
+  const camera=new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 )
+  camera.position.z=5
+  const scene=new THREE.Scene()
+  scene.background=new THREE.Color( 0xe0e0e0 )
+  scene.fog=new THREE.Fog( 0xe0e0e0, 1, 15 )
+  const controls=new THREE.OrbitControls(camera, renderer.domElement)
+  controls.enableDamping=true
+  controls.dampingFactor=0.1
+  const ambientLight=new THREE.AmbientLight(0xffffff, .5)
   scene.add(ambientLight)
-  const light2 = new THREE.PointLight(0xffffff, .5)
+  const light2=new THREE.PointLight(0xffffff, .5)
   light2.position.set(0, 1, 0)
   scene.add(light2)
-  const light = new THREE.PointLight(0xffffff, .1)
+  const light=new THREE.PointLight(0xffffff, .1)
   light.position.set(0, 2, 0)
   scene.add(light)
-  light.castShadow = true
+  light.castShadow=true
   light.shadow.mapSize.width = 4096
   light.shadow.mapSize.height = 4096
   light.shadow.camera.near = 0.1
