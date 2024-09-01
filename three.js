@@ -33,26 +33,26 @@ const renderer=new THREE.WebGLRenderer({
     const ballMat=new THREE.MeshMatcapMaterial( { 
       matcap: matcap
     })
-    const hairGeo = new THREE.CylinderBufferGeometry(.006, .006, 8,  32)
-    const hairMat = new THREE.MeshPhongMaterial( { 
+    const hairGeo=new THREE.CylinderBufferGeometry(.006, .006, 8,  32)
+    const hairMat=new THREE.MeshPhongMaterial( { 
       color: 0xcccccc
     })
-    for (let i = 0; i < 10; i++) {
-      const group = new THREE.Group()
+    for (let i=0;i<10;i++){
+      const group=new THREE.Group()
       scene.add(group)
-      const ball = new THREE.Mesh( ballGeo, ballMat )
-      ball.position.y = -6
-      ball.castShadow = true
-      ball.receiveShadow = true
+      const ball=new THREE.Mesh( ballGeo, ballMat )
+      ball.position.y=-6
+      ball.castShadow=true
+      ball.receiveShadow=true
       group.add( ball )
-      const hair = new THREE.Mesh( hairGeo, hairMat )
-      hair.position.y = -2
+      const hair=new THREE.Mesh( hairGeo, hairMat )
+      hair.position.y=-2
       group.add( hair )
-      group.position.x = -3. + i * .7
-      group.position.y = 6
-      gsap.fromTo(group.rotation, {
-        x: -.3,
-      }, {
+      group.position.x=-3.+i*.7
+      group.position.y=6
+      gsap.fromTo(group.rotation,{
+        x:-.3,
+      },{
         duration: 1.5,
         x: .3,
         repeat: -1,
