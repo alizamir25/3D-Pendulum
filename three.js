@@ -20,17 +20,17 @@ const renderer=new THREE.WebGLRenderer({
   light.position.set(0, 2, 0)
   scene.add(light)
   light.castShadow=true
-  light.shadow.mapSize.width = 4096
-  light.shadow.mapSize.height = 4096
-  light.shadow.camera.near = 0.1
-  light.shadow.camera.far = 30
-  renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = THREE.PCFSoftShadowMap
-  const meshes = []
-  const matcap = new THREE.TextureLoader().load('https://raw.githubusercontent.com/nidorx/matcaps/master/1024/5C4E41_CCCDD6_9B979B_B1AFB0.png')
-  const init = () => {
-    const ballGeo = new THREE.SphereBufferGeometry(.3, 32, 32)
-    const ballMat = new THREE.MeshMatcapMaterial( { 
+  light.shadow.mapSize.width=4096
+  light.shadow.mapSize.height=4096
+  light.shadow.camera.near=0.1
+  light.shadow.camera.far=30
+  renderer.shadowMap.enabled=true;
+  renderer.shadowMap.type=THREE.PCFSoftShadowMap
+  const meshes=[]
+  const matcap=new THREE.TextureLoader().load('https://raw.githubusercontent.com/nidorx/matcaps/master/1024/5C4E41_CCCDD6_9B979B_B1AFB0.png')
+  const init=()=>{
+    const ballGeo=new THREE.SphereBufferGeometry(.3, 32, 32)
+    const ballMat=new THREE.MeshMatcapMaterial( { 
       matcap: matcap
     })
     const hairGeo = new THREE.CylinderBufferGeometry(.006, .006, 8,  32)
