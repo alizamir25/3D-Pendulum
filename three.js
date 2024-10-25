@@ -3,7 +3,7 @@ const renderer=new THREE.WebGLRenderer({
     antialias: true
   })
   renderer.setSize( window.innerWidth, window.innerHeight )
-  const camera=new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 )
+  const camera=new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 )
   camera.position.z=5
   const scene=new THREE.Scene()
   scene.background=new THREE.Color( 0xe0e0e0 )
