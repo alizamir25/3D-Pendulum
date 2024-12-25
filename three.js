@@ -2,6 +2,7 @@ const renderer=new THREE.WebGLRenderer({
     canvas: document.getElementById('canvas'), 
     antialias: true
   })
+
   renderer.setSize( window.innerWidth, window.innerHeight )
   const camera=new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 )
   camera.position.z=5
@@ -26,6 +27,7 @@ const renderer=new THREE.WebGLRenderer({
   light.shadow.camera.far=30
   renderer.shadowMap.enabled=true;
   renderer.shadowMap.type=THREE.PCFSoftShadowMap
+
   const meshes=[]
   const matcap=new THREE.TextureLoader().load('https://raw.githubusercontent.com/nidorx/matcaps/master/1024/5C4E41_CCCDD6_9B979B_B1AFB0.png')
   const init=()=>{
@@ -37,6 +39,7 @@ const renderer=new THREE.WebGLRenderer({
     const hairMat=new THREE.MeshPhongMaterial( { 
       color: 0xcccccc
     })
+
     for (let i=0;i<10;i++){
       const group=new THREE.Group()
       scene.add(group)
@@ -74,6 +77,7 @@ const renderer=new THREE.WebGLRenderer({
     plane.receiveShadow=true
     scene.add(plane)
   }
+
   init()
   const render=()=>{
       requestAnimationFrame( render )
@@ -81,6 +85,7 @@ const renderer=new THREE.WebGLRenderer({
     controls.update()
     scene.rotation.y+=.005
   }
+  
   render()
   const resize=()=>{
     camera.aspect=window.innerWidth/window.innerHeight
