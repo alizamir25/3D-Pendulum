@@ -40,7 +40,7 @@ const renderer=new THREE.WebGLRenderer({
       color: 0xcccccc
     })
 
-    
+
     for (let i=0;i<10;i++){
       const group=new THREE.Group()
       scene.add(group)
@@ -79,6 +79,7 @@ const renderer=new THREE.WebGLRenderer({
     scene.add(plane)
   }
 
+  
   init()
   const render=()=>{
       requestAnimationFrame( render )
