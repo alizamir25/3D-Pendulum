@@ -28,6 +28,7 @@ const renderer=new THREE.WebGLRenderer({
   renderer.shadowMap.enabled=true;
   renderer.shadowMap.type=THREE.PCFSoftShadowMap
 
+  
   const meshes=[]
   const matcap=new THREE.TextureLoader().load('https://raw.githubusercontent.com/nidorx/matcaps/master/1024/5C4E41_CCCDD6_9B979B_B1AFB0.png')
   const init=()=>{
@@ -79,7 +80,7 @@ const renderer=new THREE.WebGLRenderer({
     scene.add(plane)
   }
 
-  
+
   init()
   const render=()=>{
       requestAnimationFrame( render )
